@@ -9,9 +9,16 @@ demo video showcases:
 - running playwright test suite, it runs my app as a user would, fetches data, but recieved the mocked responses from MSW
 
 ### Highlights
-- work entirely offline on your app with the help of MSW (as long as you setup the handlers before going offline)
-- run your E2E/Integration test suite thats powered by MSW a lot faster by using MSW
+- run your E2E/Integration test suite faster by using MSW inside of your node server
+    - API responses are fast b/c data is local, no need to go to external machine etc
 - ability to share your handler code on the server or browser
+    - MSW node initialization
+        - in this app, all data fetching happens through the remix server, so this is why we initialize MSW there instead of our web browser
+    - MSW browser initialization
+        - you could use the same handlers in the browser & those would be useful if wanted to test a single component in isolation with data from an API (which MSW would return)
+- work entirely offline on your app with the help of MSW 
+    - Example: you're working with a 3rd party API & its down or you don't want to get rate limited, so you create an MSW handler to intercept requests to that particular URL
+    - Example: you're going to travel & have no internet, so you create an MSW handler to prepare for offline coding
 
 
 ## Questions ❓❔
