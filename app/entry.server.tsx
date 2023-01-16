@@ -12,7 +12,10 @@ const ABORT_DELAY = 5000;
 
 // if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test") {
   // Initialize MSW by uncommenting the line and handlers you wish to use below
-  startMockServer([...animalHandlers, ...peopleHandlers]);
+  startMockServer([
+    ...animalHandlers, 
+    // ...peopleHandlers
+  ]);
 // }
 
 
