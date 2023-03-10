@@ -8,6 +8,6 @@ npm run build;
 echo "Preparing to start app ...."
 npm run start & disown;
 
-sleep 3;
+sleep 6;
 echo "Preparing curl the app in order to trigger MSW mock server activation"
 curl --silent --output /dev/null http://localhost:3000;
